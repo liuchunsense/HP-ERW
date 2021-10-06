@@ -15,6 +15,7 @@ gaze zones including front windshield, right side, left side, center console (in
 ## Modified tools in our pipeline
 ### 1. Driver location area estimation
 In order to improve the effectiveness of the facial and eye landmarks, a face alignment process is designed. We set a driver cropping area by empirical values to eliminate the interference caused by the complicated scene outside the car. 
+
 This part of the code is coming soon.
 ### 2. Face detector
 The [Dockerface](https://github.com/natanielruiz/dockerface) is used to detect the driver face.
@@ -24,6 +25,7 @@ This study adopts [2D-FAN](https://github.com/tanmaysingha/2D-3D-FAN) trained on
 we use the solvePnP function in the OpenCV library to output rotation matrix R and translation matrix T. And we convert these matrices to Euler angle output as driver’s head pose.
 ## Experimental results
 Our method is coded with python based on PyTorch[39]. The main configuration of our platform is with an Intel i7-8700 CPU, 24GB DDR4, NVIDIA GTX 1070 Ti graphics card.
+
 The experimental results are coming soon.
 
 
