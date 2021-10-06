@@ -3,24 +3,24 @@
 ## What is HP-ERW?
 Driver gaze zone estimation is an important task in Advanced Driver Assistance Systems (ADAS), which suffers difficulties including head pose, capture direction, glass occlusion, and real-time requirement, etc. Most previous methods combine face modalities and head pose using an easy concat process, which may result in over-fitting due to the unbalanced dimension of the face and head pose. To address the gaze zone estimation problem, we propose a novel driver gaze zone estimation structure named Head Pose Fusion Assisted supervision & Eye Region Weighted Encoding (HP-ERW).  This structure can improve the gaze estimation task accuracy and achieve 23.5 fps real-time application in driver monitoring.
 
-### 1 Datasets
-#### DWG
+## Dataset
+### 1. DWG
 [DWG](https://arxiv.org/abs/2004.05973) dataset was collected during different times of day. 9 gaze zones were selected from rearview mirror, side mirrors, radio, speedometer and windshield. DWG dataset contains 338 subjects (247 male and 91 females). It contains 29,392 frames of 286 subjects for training and contains 9,995 frames of 52 subjects for testing.
 
-#### Lisat Gaze Data
+### 2. Lisat Gaze Data
 [Lisat Gaze Data](https://github.com/arangesh/GPCycleGAN) is a dataset collected for intelligent and safe automobiles at the University of California. In this study, we use Lisat Gaze Data V0 (introduced in [On Generalizing Driver Gaze Zone Estimation using Convolutional Neural Networks](http://cvrr.ucsd.edu/publications/2017/IV2017-VoraTrivedi-OnGeneralizingGazeZone.pdf)) and Lisat Gaze Data V1 (introduced in [Driver Gaze Zone Estimation Using Convolutional Neural Networks: A General Framework and
 Ablative Analysis](http://cvrr.ucsd.edu/publications/2018/sourabh_gaze_zone.pdf)). The training set in the V0 dataset contains 24,622 half-face images and the test set contains 4,268 half-face images; The training set in the V1 dataset contains 25,183 half-face images and the test set contains 4,822 half-face images. The datasets collects images with 7
 gaze zones including front windshield, right side, left side, center console (infotainment panel), center rearview mirror, speedometer and the "closed eye" state when the driver blinks.
 
-### 2 Modified tools in our pipeline
-#### Driver location area estimation
-#### Face detector
+## Modified tools in our pipeline
+### 1. Driver location area estimation
+### 2. Face detector
 The [Dockerface](https://github.com/natanielruiz/dockerface) is used to detect the driver face.
-#### Face landmarks detector
+### 3. Face landmarks detector
 This study adopts [2D-FAN](https://github.com/tanmaysingha/2D-3D-FAN) trained on the LS3D-W dataset in our pipeline.
-#### Head pose detector
+### 4. Head pose detector
 we use the solvePnP function in the OpenCV library to output rotation matrix R and translation matrix T. And we convert these matrices to Euler angle output as driver’s head pose.
-### 3 Experimental results
+## Experimental results
 
 
 
